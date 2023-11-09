@@ -1,2 +1,2 @@
-# Raspberry Pi Cloud Robotics
- Raspberry Pi Cloud Robotics, by BPB Publications
+# Cloud-Powered Robotics with Raspberry Pi
+ Cloud-Powered Robotics with Raspberry Pi, by BPB Publications
