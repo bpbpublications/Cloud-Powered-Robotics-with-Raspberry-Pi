@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: spring-robot
+  name: spring-robot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-robot
+  template:
+    metadata:
+      labels:
+        app: spring-robot
+    spec:
+      containers:
+      - name: spring-robot
+        image: <dockerhub-username>/spring-robot:latest
+        imagePullPolicy: Always
+        ports:
+        - name: springport
+          containerPort: 8080
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-robot
+  labels:
+    app: spring-robot
+spec:
+  selector:
+    app: spring-robot
+  ports:
+    - name: spring-robot
+      protocol: TCP
+      port: 8080
+      targetPort: springport
+  type: LoadBalancer
+

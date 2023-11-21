@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: node-robot
+  namespace: monitoring
+  labels:
+    app: node-robot
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: node-robot
+  endpoints:
+  - port: node-robot
+    path: /metrics
+    interval: 15s
+  namespaceSelector:
+    matchNames:
+    - default
