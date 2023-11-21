@@ -1,8 +1,0 @@
-apiVersion: v1
-name: node-robot
-keywords:
-- node-robot
-version: 1.0.0
-maintainers:
-- name: <name>
-  email: <email>
